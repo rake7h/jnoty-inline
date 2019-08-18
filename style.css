@@ -1,0 +1,56 @@
+.jnoty-inline {
+  font-size: 16px;
+  color: #fff;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1070;
+}
+.jnoty-inline-item {
+  border-radius: 2px;
+  background-color: #3E445A;
+  box-shadow: 1px 2px 4px 0 rgba(117,117,117,0.50);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 4px 18px;
+  max-width: 540px;
+  overflow: hidden;
+}
+.jnoty-inline-item:first-child {
+  animation: slide 0.4s ease;
+}
+.jnoty-inline-item:last-child {
+  margin-bottom: 18px;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-40px);
+    }
+}
+.jnoty-inline-flag {
+  padding: 12px 8px;
+}
+
+.jnoty-inline-message {
+  padding: 12px 16px;
+}
+.jnoty-inline-controls {
+  padding: 12px 8px;
+  cursor: pointer;
+}
+.jnoty-inline-pending .jnoty-inline-flag {
+  background: #19C8CC;
+}
+.jnoty-inline-fulfilled .jnoty-inline-flag {
+  background: #19CC53;
+}
+.jnoty-inline-rejected .jnoty-inline-flag{
+  background: #EE4949;
+}
