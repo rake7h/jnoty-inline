@@ -6,6 +6,12 @@
 const NAME    = 'jnoty-inline'
 const VERSION = '0.0.1'
 
+const FLAG_ICONS = {
+  pending   : `<div class="jnoty-inline-flag_spinner"></div>`,
+  fulfilled : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`,
+  rejected  : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-frown"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2M9 9h.01M15 9h.01"/></svg>`,
+  close     : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>`
+}
 const EVENTS = {
   CLOSE : 'closed',
   FADE  : 'fading',
@@ -18,6 +24,7 @@ const CLASSNAME = {
   FLAG              : 'jnoty-inline-flag',
   MESSAGE           : 'jnoty-inline-message',
   CONTROLE          : 'jnoty-inline-controls',
+  CONTROL_CLOSE     : 'jnoty-inline-controls_close',
   THEME_PENDING     : 'jnoty-inline-pending',
   THEME_FULLFILLED  : 'jnoty-inline-fulfilled',
   THEME_REJECTED    : 'jnoty-inline-rejected',
@@ -61,6 +68,7 @@ class JnotyInline {
     this.sticky     = sticky
     this.timeout    = timeout
     this.position   = position
+    this.jnotyTheme = _getThemeForThisJnoty(this.kind)
     this.init()
   }
 
@@ -85,30 +93,14 @@ class JnotyInline {
     jnotyItem.className = CLASSNAME.ITEM
 
     //add item theme
-    let theme = null
-    switch (this.kind) {
-      case KIND.PENDING:
-        theme = CLASSNAME.THEME_PENDING
-        break;
-      case KIND.FULLFILLED:
-        theme = CLASSNAME.THEME_FULLFILLED
-        break;
-      case KIND.REJECTED:
-        theme = CLASSNAME.THEME_REJECTED
-        break;
-      case KIND.ERROR:
-        theme = CLASSNAME.THEME_ERROR
-        break;
-      default:
-        theme = CLASSNAME.THEME_FULLFILLED //@// TODO:  default need to change with some secondary style.
-    }
+    let theme = this.jnotyTheme.theme
     jnotyItem.classList.add(theme)
     jnotyContainer.appendChild(jnotyItem);
 
     // add flag element
     let jnotyFlag = document.createElement('div')
     jnotyFlag.className = CLASSNAME.FLAG
-    jnotyFlag.innerHTML = this.kind
+    jnotyFlag.innerHTML = this.jnotyTheme.flagIcon
     jnotyItem.appendChild(jnotyFlag);
 
     // add message element
@@ -120,8 +112,11 @@ class JnotyInline {
     //add close button
     if (this.kind !== KIND.PENDING) {
       let jnotyClose = document.createElement('div')
+      let jnotyCloseButton = document.createElement('button')
       jnotyClose.className = CLASSNAME.CONTROLE
-      jnotyClose.innerHTML = 'X'
+      jnotyCloseButton.className = CLASSNAME.CONTROL_CLOSE
+      jnotyCloseButton.innerHTML = FLAG_ICONS.close
+      jnotyClose.appendChild(jnotyCloseButton);
       jnotyItem.appendChild(jnotyClose);
 
       // Sets the automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 or an error will be thrown.
@@ -190,6 +185,37 @@ function _fade(id, timeout) {
   return setTimeout(() => {
     _removeJnotyElement(id)
   }, timeout);
+}
+
+function _getThemeForThisJnoty(kind) {
+  let theme = null
+  let flagIcon = null
+  switch (kind) {
+    case KIND.PENDING:
+      theme = CLASSNAME.THEME_PENDING
+      flagIcon = FLAG_ICONS.pending
+      break;
+    case KIND.FULLFILLED:
+      theme = CLASSNAME.THEME_FULLFILLED
+      flagIcon = FLAG_ICONS.fulfilled
+      break;
+    case KIND.REJECTED:
+      theme = CLASSNAME.THEME_REJECTED
+      flagIcon = FLAG_ICONS.rejected
+      break;
+    case KIND.ERROR:
+      theme = CLASSNAME.THEME_ERROR
+      flagIcon = FLAG_ICONS.rejected
+      break;
+    default:
+      theme = CLASSNAME.THEME_FULLFILLED //@// TODO:  default need to change with some secondary style.
+      flagIcon = FLAG_ICONS.pending
+  }
+  let settedTheme = {
+    theme: theme,
+    flagIcon: flagIcon
+  }
+  return settedTheme
 }
 
 export default JnotyInline

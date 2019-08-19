@@ -9,10 +9,11 @@
   bottom: 0;
   z-index: 1070;
 }
+
 .jnoty-inline-item {
   border-radius: 2px;
-  background-color: #3E445A;
-  box-shadow: 1px 2px 4px 0 rgba(117,117,117,0.50);
+  background-color: #42526E;
+  box-shadow: 1px 2px 4px 0 rgba(117, 117, 117, 0.50);
   display: inline-flex;
   flex-direction: row;
   align-items: stretch;
@@ -20,37 +21,105 @@
   max-width: 540px;
   overflow: hidden;
 }
+
 .jnoty-inline-item:first-child {
   animation: slide 0.4s ease;
 }
+
 .jnoty-inline-item:last-child {
   margin-bottom: 18px;
 }
+
 @keyframes slide {
-    0% {
-        transform: translateX(0px);
-    }
-    100% {
-        transform: translateX(-40px);
-    }
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
 }
+
 .jnoty-inline-flag {
-  padding: 12px 8px;
+  padding: 10px 8px;
+  line-height: 29px;
+  max-width: 42px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .jnoty-inline-message {
-  padding: 12px 16px;
+  line-height: 29px;
+  padding: 10px 16px;
 }
+
 .jnoty-inline-controls {
-  padding: 12px 8px;
+  padding: 10px 8px;
   cursor: pointer;
 }
+
 .jnoty-inline-pending .jnoty-inline-flag {
-  background: #19C8CC;
+  background: #00B8D9;
 }
+
 .jnoty-inline-fulfilled .jnoty-inline-flag {
-  background: #19CC53;
+  background: #36B37E;
 }
-.jnoty-inline-rejected .jnoty-inline-flag{
-  background: #EE4949;
+
+.jnoty-inline-rejected .jnoty-inline-flag {
+  background: #FF5630;
+}
+
+/**spinner**/
+.jnoty-inline-flag_spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jnoty-inline-controls_close {
+  display: inline-block;
+  border: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: transparent;
+  margin: 0;
+  height: 26px;
+  width: 26px;
+  padding: 0px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.jnoty-inline-controls_close:hover {
+  background-color: #6B778C;
+}
+
+.jnoty-inline-controls_close:focus {
+  background: #7A869A;
+}
+
+.jnoty-inline-controls_close:focus {
+  outline: none;
+}
+
+.jnoty-inline-controls_close:active {
+  transform: scale(0.99);
+  outline: none;
 }
