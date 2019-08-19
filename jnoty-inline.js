@@ -218,4 +218,21 @@ function _getThemeForThisJnoty(kind) {
   return settedTheme
 }
 
-export default JnotyInline
+export const jnotyInline = (options) => {
+    new JnotyInline(options).show()
+}
+
+for (const kind of ['fulfilled', 'pending', 'rejected', 'error']) {
+  jnotyInline[kind] = options => jnotyInline(assign({kind}, options))
+}
+
+// utils
+// nono-assign
+function assign(obj) {
+  for (let i = 1; i < arguments.length; i++) {
+    // eslint-disable-next-line guard-for-in, prefer-rest-params
+    for (const p in arguments[i]) obj[p] = arguments[i][p]
+  }
+  return obj
+}
+export default jnotyInline
