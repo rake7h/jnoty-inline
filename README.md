@@ -57,7 +57,7 @@ jnotyInline.hide();
 
 **Warning:** _In future versions some commands may change_
 
-## Contributing
+## Example
 ```javascript
 <script type="module">
  import * as module from './jnoty-inline-min.js';
