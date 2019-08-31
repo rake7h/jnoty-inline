@@ -1,0 +1,31 @@
+{
+  "name": "jnoty-inline",
+  "version": "1.0.0",
+  "description": "Snackbar like notification for the web. Build for javascript promises.",
+  "main": "jnoty.js",
+  "keywords": [
+    "alerts",
+    "notification",
+    "jquery-plugin",
+    "noty",
+    "growl",
+    "Snackbar",
+    "toast",
+    "toast notification",
+    "native js",
+    "ecosystem: javascript"
+  ],
+  "homepage": "https://visualapps.github.io/jnoty-inline/",
+  "author": {
+    "name": "Rakesh singh",
+    "url": "https://github.com/visualapps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visualapps/jnoty-inline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/visualapps/jnoty-inline/issues"
+  },
+  "license": "MIT"
+}
