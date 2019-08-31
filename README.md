@@ -49,8 +49,8 @@ jnotyInline.hide();
 
 | ARGUMENT               | DESCRIPTION                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
-| message        | Give a message to notifcation |
-| timeout        | Set a custom delay (in milliseconds) to despair notification |
+| message        | Give a message to notification|
+| timeout        | Set a custom delay (in milliseconds) to hide notification |
 | sticky       |Disable timeout and make it sticky|
 | kind     |Set a kind of notification|
 | position  |Set the custom position of the notification   |
