@@ -9,7 +9,11 @@
 ## Install
 
 ```bash
-npm i jnoty-inline
+$ npm i jnoty-inline
+```
+or
+```bash
+$ bower install <package> --save
 ```
 
 ## Demo
