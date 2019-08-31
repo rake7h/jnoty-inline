@@ -1,0 +1,17 @@
+{
+    "name": "jnoty",
+    "main": "jnoty-inline.js",
+    "homepage": "https://github.com/visualapps/jnoty-inline",
+    "authors": [
+    "rake7h <rake7h@gmail.com>"
+  ],
+    "description": "Snackbar like notification for the web. Build for javascript promises.",
+    "keywords": [
+    "Snackbar",
+    "alerts",
+    "notification",
+    "bootstrap alerts",
+    "growl"
+],
+    "license": "MIT"
+}
