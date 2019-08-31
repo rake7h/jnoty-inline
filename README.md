@@ -17,7 +17,7 @@ npm i jnoty-inline
 📝 **https://visualapps.github.io/jnoty-inline/**
 
 
-## Options
+## Usages
 Usage is simple:
 ```javascript
 jnotyInline.pending({
