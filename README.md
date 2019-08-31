@@ -1,6 +1,6 @@
-# jnoty-inline
-Demo
-https://visualapps.github.io/jnoty-inline/
+<p align="center">
+<img src="https://github.com/visualapps/jnoty-inline/blob/master/docs/banner-logo.png" width="300">
+</p>
 
 ![jnoty-inline](https://github.com/visualapps/jnoty-inline/blob/master/docs/preview.gif)
 
