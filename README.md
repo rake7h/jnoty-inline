@@ -47,9 +47,11 @@ jnotyInline.rejected({
 | kind     |Set a kind of notification|
 | position  |Set the custom position of the notification   |
 
-**Warning:** _In future versions some commands may change_
+**Kinds** : pending, fulfilled, rejected
 
-<a name="examples"></a>
+**position** : Work in progress. Default: bottom-right
+
+**Warning:** _In future versions some commands may change_
 
 
 ## Contributing
