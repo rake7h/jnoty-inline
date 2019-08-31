@@ -13,7 +13,7 @@ $ npm i jnoty-inline
 ```
 or
 ```bash
-$ bower install <package> --save
+$ bower install jnoty-inline --save
 ```
 
 ## Demo
