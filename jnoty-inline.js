@@ -118,51 +118,49 @@ class JnotyInline {
       jnotyCloseButton.innerHTML = FLAG_ICONS.close
       jnotyClose.appendChild(jnotyCloseButton);
       jnotyItem.appendChild(jnotyClose);
+// Sets the automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 or an error will be thrown.
+if (this.sticky !== true) {
+  let timmer = _fade(this.id, this.timeout)
+  if (timmer) {
+    this.state = EVENTS.FADE;
+  }
+}
 
-      // Sets the automatic dismiss timeout in milliseconds. Value must be between 4000 and 10000 or an error will be thrown.
-      if (this.sticky !== true) {
-        let timmer = _fade(this.id, this.timeout)
-        if (timmer) {
-          this.state = EVENTS.FADE;
-        }
-      }
-
-      // add click event for close
-      jnotyClose.addEventListener('click', () => {
-        try{
-          if(timmer) {
-            clearTimeout(timmer);
-          }
-        }
-        catch(e){}
-
-        let removed = _removeJnotyElement(this.id)
-        if (removed) {
-          this.state = EVENTS.CLOSE
-        }
-      })
+// add click event for close
+jnotyClose.addEventListener('click', () => {
+  try {
+    if (timmer) {
+      clearTimeout(timmer);
     }
-  }
+  } catch (e) {}
 
-  hide() {
-    let removed = _removeJnotyElement(this.id)
-    if (removed) {
-      this.state = EVENTS.CLOSE
-    }
+  let removed = _removeJnotyElement(this.id)
+  if (removed) {
+    this.state = EVENTS.CLOSE
   }
+})
+}
+}
 
-  // Getter
-  get currentJnoty() {
-    return this.id;
+hide() {
+  let removed = _removeJnotyElement(this.id)
+  if (removed) {
+    this.state = EVENTS.CLOSE
   }
-  get getCurrentState() {
-    return this.state
-  }
+}
 
-  // Setter
-  set setCurrentState(state) {
-    this.state = state
-  }
+// Getter
+get currentJnoty() {
+  return this.id;
+}
+get getCurrentState() {
+  return this.state
+}
+
+// Setter
+set setCurrentState(state) {
+  this.state = state
+}
 }
 
 // @private
@@ -219,11 +217,13 @@ function _getThemeForThisJnoty(kind) {
 }
 
 export const jnotyInline = (options) => {
-    new JnotyInline(options).show()
+  new JnotyInline(options).show()
 }
 
 for (const kind of ['fulfilled', 'pending', 'rejected', 'error']) {
-  jnotyInline[kind] = options => jnotyInline(assign({kind}, options))
+  jnotyInline[kind] = options => jnotyInline(assign({
+    kind
+  }, options))
 }
 
 // utils

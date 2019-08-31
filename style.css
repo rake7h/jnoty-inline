@@ -1,3 +1,6 @@
+* {
+  outline: 0px dotted red;
+}
 .jnoty-inline {
   font-size: 16px;
   color: #fff;
@@ -41,11 +44,18 @@
 }
 
 .jnoty-inline-flag {
-  padding: 10px 8px;
-  line-height: 29px;
+  display: inline-block;
+  flex: none;
+  padding: 8px 8px;
+  line-height: 33px;
+  width: 42px;
   max-width: 42px;
   white-space: nowrap;
   overflow: hidden;
+}
+svg {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .jnoty-inline-message {

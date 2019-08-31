@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jnoty</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script type="module">
+    import * as module from './jnoty-inline.js';
+    let button = document.getElementById('getJnoty').onclick = ()=>demo();
+    function demo() {
+      var kind = $('select[name=selector]').val();
+      switch (kind) {
+        case "pending":
+        module.jnotyInline.pending({message:'Updating...'});
+          break;
+        case "fulfilled":
+        module.jnotyInline.fulfilled({message:'Profile updated successfully.'});
+          break;
+        case "rejected":
+        module.jnotyInline.rejected({message:'Something went wrong!'});
+          break;
+      }
+    }
+  </script>
+</head>
+
+<body style="color:#112548;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href>jnoty-inline</a>
+  </nav>
+  <div class="container" style="margin-top:10%;">
+    <div class="d-flex align-item-center flex-column">
+      <div>
+        <h1 style="font-size:24px;">Snackbar like notification for the web. Build for javascript promises.</h1>
+      </div>
+      <div class="mt-4 mb-4">
+        <code class="w-50">
+          <span style="color:#5243AA;">jnotyInline.pending</span>({<br>
+          <span style="color:#5243AA;"><span style="color:deeppink"> message:</span></span> <span style="color:#FF8B00;">'Success',</span><br>
+          });<br>
+        </code>
+      </div>
+      <div class="d-flex align-items-end">
+        <div style="width:13%;">
+          <span>Select theme</span>
+          <select class="custom-select" name="selector">
+            <option selected value="pending">pending</option>
+            <option value="fulfilled">fullfilled</option>
+            <option value="rejected">rejected</option>
+          </select></div>
+        <div>
+          <button class="btn btn-success ml-1" id="getJnoty">Show me a demo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+</body>
+</html>
