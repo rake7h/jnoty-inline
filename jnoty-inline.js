@@ -217,7 +217,7 @@ function _getThemeForThisJnoty(kind) {
 }
 
 export const jnotyInline = (options) => {
-  let newNotification = new JnotyInline(e)
+  let newNotification = new JnotyInline(options)
   newNotification.show()
   return newNotification;
 }
