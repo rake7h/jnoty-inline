@@ -35,6 +35,10 @@ jnotyInline.rejected({
  sticky: true
 });
 ```
+Hide a notification
+```javascript
+jnotyInline.hide();
+```
 <a name="options"></a>
 
 ## Options
@@ -53,7 +57,20 @@ jnotyInline.rejected({
 
 **Warning:** _In future versions some commands may change_
 
-
+## Contributing
+```javascript
+<script type="module">
+ import * as module from './jnoty-inline-min.js';
+ 
+  // open a notification 
+  let notification = module.jnotyInline.pending({message:'Updating...'});
+  
+  // hide after 10000ms
+  setTimeout(()=>{
+   notification.hide();
+  },10000)
+</script>
+```
 ## Contributing
 
 1. Fork it!
