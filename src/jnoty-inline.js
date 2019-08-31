@@ -217,7 +217,9 @@ function _getThemeForThisJnoty(kind) {
 }
 
 export const jnotyInline = (options) => {
-  new JnotyInline(options).show()
+  let newNotification = new JnotyInline(e)
+  newNotification.show()
+  return newNotification;
 }
 
 for (const kind of ['fulfilled', 'pending', 'rejected', 'error']) {
