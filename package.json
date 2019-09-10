@@ -1,8 +1,8 @@
 {
   "name": "jnoty-inline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Snackbar like notification for the web. Build for javascript promises.",
-  "main": "jnoty.js",
+  "main": "jnoty-inline.js",
   "keywords": [
     "alerts",
     "notification",
@@ -16,16 +16,19 @@
     "ecosystem: javascript"
   ],
   "homepage": "https://visualapps.github.io/jnoty-inline/",
-  "author": {
-    "name": "Rakesh singh",
-    "url": "https://github.com/visualapps"
-  },
+  "author": "Rakesh singh (https://github.com/visualapps)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/visualapps/jnoty-inline.git"
+    "url": "git+https://github.com/visualapps/jnoty-inline.git"
   },
   "bugs": {
     "url": "https://github.com/visualapps/jnoty-inline/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
