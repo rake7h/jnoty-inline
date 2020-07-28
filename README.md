@@ -1,8 +1,8 @@
 <p align="center">
-<img src="https://github.com/visualapps/jnoty-inline/blob/master/docs/banner-logo.png" width="300">
+<img src="https://github.com/rake7h/jnoty-inline/blob/master/docs/banner-logo.png" width="300">
 </p>
 
-![jnoty-inline](https://github.com/visualapps/jnoty-inline/blob/master/docs/preview.gif)
+![jnoty-inline](https://github.com/rake7h/jnoty-inline/blob/master/docs/preview.gif)
 
 
 
@@ -18,7 +18,7 @@ $ bower install jnoty-inline --save
 
 ## Demo
 
-📝 **https://visualapps.github.io/jnoty-inline/**
+📝 **https://rake7h.github.io/jnoty-inline/**
 
 
 ## Usages
@@ -85,7 +85,7 @@ jnotyInline.hide();
 
 ## Author
 
-**jnoty-inline** © [rake7h](https://github.com/visualapps), Released under the [MIT](./LICENSE) License.<br>
+**jnoty-inline** © [rake7h](https://github.com/rake7h), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by rake7h. 
 
->  GitHub [@rake7h](https://github.com/visualapps) · Twitter [@rake7h](https://twitter.com/rake7h)
+>  GitHub [@rake7h](https://github.com/rake7h) · Twitter [@rake7h](https://twitter.com/rake7h)
