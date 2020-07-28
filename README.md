@@ -88,4 +88,4 @@ jnotyInline.hide();
 **jnoty-inline** © [rake7h](https://github.com/visualapps), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by rake7h. 
 
->  GitHub [@visualapps](https://github.com/visualapps) · Twitter [@rake7h](https://twitter.com/rake7h)
+>  GitHub [@rake7h](https://github.com/visualapps) · Twitter [@rake7h](https://twitter.com/rake7h)
